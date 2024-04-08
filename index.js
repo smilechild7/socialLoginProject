@@ -1,5 +1,6 @@
 import bodyParser from "body-parser";
 import express from "express";
+import { ping } from "./controller/system.js";
 import cors from 'cors';
 
 const serverPort = 3000;
@@ -9,13 +10,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cors());
 const router = express.Router();
 
-const ping = (req, res) => {
-    const result = true;
-    console.log('pong');
-    res.send({result});
-};
-
 router.route('/ping').get(ping);
+
 app.use('/socialLoginProject/api/v1',router);
 app.listen(serverPort);
 
