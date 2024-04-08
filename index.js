@@ -11,7 +11,7 @@ const router = express.Router();
 
 const ping = (req, res) => {
     const result = true;
-    console.log('pong')
+    console.log('pong');
     res.send({result});
 };
 
